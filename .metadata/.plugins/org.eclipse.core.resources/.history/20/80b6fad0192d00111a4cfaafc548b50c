@@ -1,5 +1,0 @@
-package q23;
-
-public class SeatNotAvailableException {
-
-}

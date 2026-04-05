@@ -1,5 +1,0 @@
-package q22;
-
-public class InvalidBalanceException {
-
-}

@@ -1,0 +1,10 @@
+package q11;
+
+public class ATMSystem {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

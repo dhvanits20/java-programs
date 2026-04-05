@@ -1,0 +1,62 @@
+package q23;
+
+import java.util.Scanner;
+
+public class TransportBookingSystem {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number of transport routes: ");
+        int n = sc.nextInt();
+        Transport[] transports = new Transport[n];
+
+        for (int i = 0; i < n; i++) {
+            System.out.println("\nTransport " + (i + 1) + ":");
+            sc.nextLine(); 
+            System.out.print("Enter Route: ");
+            String route = sc.nextLine();
+            System.out.print("Enter Base Fare per km: ");
+            double baseFare = sc.nextDouble();
+            System.out.print("Enter Available Seats: ");
+            int seats = sc.nextInt();
+            System.out.print("Type (1 for Bus, 2 for Train, 3 for Flight): ");
+            int type = sc.nextInt();
+
+            if (type == 1) {
+                transports[i] = new Bus(route, baseFare, seats);
+            } else if (type == 2) {
+                transports[i] = new Train(route, baseFare, seats);
+            } else {
+                transports[i] = new Flight(route, baseFare, seats);
+            }
+        }
+
+        System.out.print("\nEnter number of booking attempts: ");
+        int attempts = sc.nextInt();
+
+        for (int i = 0; i < attempts; i++) {
+            System.out.println("\nBooking " + (i + 1) + ":");
+            System.out.print("Select Transport Index (0 to " + (n - 1) + "): ");
+            int index = sc.nextInt();
+            System.out.print("Enter distance (km): ");
+            int distance = sc.nextInt();
+            System.out.print("Enter seats to book: ");
+            int seats = sc.nextInt();
+
+            if (index >= 0 && index < n) {
+                try {
+                    transports[index].bookSeat(seats);
+                    System.out.println("Total Fare: Rs. " + (transports[index].calculateFare(distance) * seats));
+                } catch (SeatNotAvailableException e) {
+                    System.out.println("Booking Failed: " + e.getMessage());
+                }
+            } else {
+                System.out.println("Invalid Transport Index.");
+            }
+        }
+        sc.close();
+	}
+
+}

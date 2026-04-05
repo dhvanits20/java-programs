@@ -1,0 +1,10 @@
+package q24;
+
+public class ECommerceBillingSystem {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

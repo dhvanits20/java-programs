@@ -1,0 +1,23 @@
+package q30;
+
+import java.util.Scanner;
+
+public class InstituteStudent extends Person {
+	private int semester;
+    private String results;
+
+    public void getStudentData(Scanner sc) {
+        getPersonData(sc);
+        System.out.print("Enter Semester: ");
+        semester = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Enter Results/Grades: ");
+        results = sc.nextLine();
+    }
+
+    public void printStudentData() {
+        System.out.println("\n--- Student Profile ---");
+        printPersonData();
+        System.out.println("Semester: " + semester + " | Results: " + results);
+    }
+}

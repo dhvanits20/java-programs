@@ -1,0 +1,39 @@
+package q30;
+
+public class InstituteApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number of records to add: ");
+        int n = sc.nextInt();
+        Person[] records = new Person[n];
+
+        for (int i = 0; i < n; i++) {
+            System.out.print("\nEnter type (1 for Faculty, 2 for Student): ");
+            int type = sc.nextInt();
+
+            if (type == 1) {
+                Faculty f = new Faculty();
+                f.getFacultyData(sc);
+                records[i] = f;
+            } else {
+                InstituteStudent s = new InstituteStudent();
+                s.getStudentData(sc);
+                records[i] = s;
+            }
+        }
+
+        System.out.println("\n--- Institute Database ---");
+        for (Person p : records) {
+            if (p instanceof Faculty) {
+                ((Faculty) p).printFacultyData();
+            } else if (p instanceof InstituteStudent) {
+                ((InstituteStudent) p).printStudentData();
+            }
+        }
+        sc.close();
+	}
+
+}

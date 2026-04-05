@@ -1,0 +1,26 @@
+package q29;
+
+import java.util.Scanner;
+
+public class Customer {
+	private String customerId,name,address,phoneNumber, dob;
+
+    public void getCustomerDetails(Scanner sc) {
+        System.out.print("Enter Customer ID: ");
+        customerId = sc.next();
+        sc.nextLine();
+        System.out.print("Enter Name: ");
+        name = sc.nextLine();
+        System.out.print("Enter Address: ");
+        address = sc.nextLine();
+        System.out.print("Enter Phone Number: ");
+        phoneNumber = sc.next();
+        System.out.print("Enter Date of Birth (DD/MM/YYYY): ");
+        dob = sc.next();
+    }
+        public void printCustomerDetails() {
+            System.out.println("Customer ID: " + customerId + " | Name: " + name);
+            System.out.println("Address: " + address + " | Phone: " + phoneNumber + " | DOB: " + dob);
+
+    }
+}

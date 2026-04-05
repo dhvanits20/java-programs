@@ -1,0 +1,10 @@
+package q26;
+
+public class ExamCertificationSystem {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
